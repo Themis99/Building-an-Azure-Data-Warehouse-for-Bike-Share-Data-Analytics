@@ -60,5 +60,8 @@ After the creation of the staging tables, the step of data transformation for th
 
 5. The business_outcome_questions.sql script can be executed for every query separately to answer the business questions 
 
+# Acknowledgemennts
+
+
 
 
