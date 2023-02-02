@@ -39,7 +39,7 @@ The data from the original schema was transformed into the new schema presented 
 Three other dimension tables were created. A dimension table related to users (users_dim) that contains information about the user such as name, birthday as well as other information about his/her subscription to the application such as whether he/she is a member or not and the start and end date of subscription. A dimension table (time_dim) stores information about each date such as day, month, quarter, year, and weekday. Last but not least, a dimension table (station_dim) contains information about each station such as name, latitude, and longitude.
 
 # Azure warehouse
-For the creation of the warehouse resources from Microsoft Azure were allocated. More specificaly an Azure Synapse Workspace was created (along with a Azure Storage Account) and a Dedicated SQL pools inside the Synapse Workspace. An postgres SQL database was created. 
+For the creation of the warehouse, resources from Microsoft Azure were allocated. More specificaly an Azure Synapse Workspace was created (along with a Azure Storage Account) and a Dedicated SQL pools inside the Synapse Workspace. An postgres SQL database was created. 
 
 For the ingestion process the storage account and the postgres SQL database were linked through the Azure synapse enviroment. The postgres SQL database was firstly filled with the data. Then the data is loaded from the Postgres SQL database to the storage account in CSV format. In this way, staging tables can be created for each CSV file. 
 
@@ -52,7 +52,13 @@ After the creation of the staging tables, the step of data transformation for th
 # Files and scripts
 1. In order to fill the postgres SQL database with the data you can run the python.py script. Please provide the credintials of the database inside the script. 
 
-2. The 
+2. The staging scripts file contains all the SQL scripts for the creation of the staging tables.
+
+3. The create scripts file contains all the SQL scripts for the creation of all schema tables.
+
+4. The insert scripts contains all the SQL scripts for the insertion of the data from the staging tables to the schema tables. 
+
+5. The  
 
 
 
