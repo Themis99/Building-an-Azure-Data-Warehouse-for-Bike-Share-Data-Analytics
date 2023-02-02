@@ -50,7 +50,7 @@ After the creation of the staging tables, the step of data transformation for th
 ![blobstorage](https://user-images.githubusercontent.com/46052843/216309709-1184d6cb-1a26-4278-b150-06ab112fd3f4.png)
 
 # Files and scripts
-1. To fill the Postgres SQL database with the data you can run the python.py script. Please provide the credentials of the database inside the script. 
+1. To fill the Postgres SQL database with the data you can run the ProjectDataToPostgres.py script. Please provide the credentials of the database inside the script. 
 
 2. The staging_scripts file contains all the SQL scripts for the creation of the staging tables.
 
@@ -62,6 +62,6 @@ After the creation of the staging tables, the step of data transformation for th
 
 # Acknowledgemennts
 
-
+I wish to thank Udacity for the guidance and the invaluable feedback they provided
 
 
