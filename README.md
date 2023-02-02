@@ -1,8 +1,8 @@
 ## Building-an-Azure-Data-Warehouse-for-Bike-Share-Data-Analytics
 
-Divvy is a bike sharing program in Chicago, Illinois USA that allows riders to purchase a pass at a kiosk or use a mobile application to unlock a bike at stations around the city and use the bike for a specified amount of time. The bikes can be returned to the same station or to another station. The City of Chicago makes the anonymized bike trip data publicly available for projects like this where we can analyze the data. due to the anonymity of the data, fake rider and account profiles, along with fake payment data, have been created to accompany the data from Divvy
+Divvy is a bikesharing program in Chicago, Illinois USA that allows riders to purchase a pass at a kiosk or use a mobile application to unlock a bike at stations around the city and use the bike for a specified amount of time. The bikes can be returned to the same station or another station. The City of Chicago makes the anonymized bike trip data publicly available for projects like this where we can analyze the data. due to the anonymity of the data, fake rider and account profiles, along with fake payment data, have been created to accompany the data from Divvy
 
-The goal in this project is to develop a data warehouse solution using Azure Synapse Analytics and more specifically to:
+The goal of this project is to develop a data warehouse solution using Azure Synapse Analytics and more specifically to:
 
 - Design a star schema based on the business outcomes listed below;
 - Import the data into Synapse;
@@ -13,12 +13,12 @@ The business outcomes we are designing for are as follows:
 
 1. Analyze how much time is spent per ride
 - Based on date and time factors such as day of week and time of day
-- Based on which station is the starting and / or ending station
-- Based on age of the rider at time of the ride
+- Based on which station is the starting and/or ending station
+- Based on the age of the rider at the time of the ride
 - Based on whether the rider is a member or a casual rider
 2. Analyze how much money is spent
 - Per month, quarter, year
-- Per member, based on the age of the rider at account start
+- Per member, based on the age of the rider at the account start
 3. Analyze how much money is spent per member
 - Based on how many rides the rider averages per month
 - Based on how many minutes the rider spends on a bike per month
@@ -39,9 +39,9 @@ The data from the original schema was transformed into the new schema presented 
 Three other dimension tables were created. A dimension table related to users (users_dim) that contains information about the user such as name, birthday as well as other information about his/her subscription to the application such as whether he/she is a member or not and the start and end date of subscription. A dimension table (time_dim) stores information about each date such as day, month, quarter, year, and weekday. Last but not least, a dimension table (station_dim) contains information about each station such as name, latitude, and longitude.
 
 # Azure warehouse
-For the creation of the warehouse, resources from Microsoft Azure were allocated. More specificaly an Azure Synapse Workspace was created (along with a Azure Storage Account) and a Dedicated SQL pools inside the Synapse Workspace. An postgres SQL database was created. 
+For the creation of the warehouse, resources from Microsoft Azure were allocated. More specifically an Azure Synapse Workspace was created (along with an Azure Storage Account) and a Dedicated SQL pool inside the Synapse Workspace. A postgres SQL database was created. 
 
-For the ingestion process the storage account and the postgres SQL database were linked through the Azure synapse enviroment. The postgres SQL database was firstly filled with the data. Then the data is loaded from the Postgres SQL database to the storage account in CSV format. In this way, staging tables can be created for each CSV file. 
+For the ingestion process, the storage account and the postgres SQL database were linked through the Azure synapse environment. The postgres SQL database was first filled with the data. Then the data is loaded from the Postgres SQL database to the storage account in CSV format. In this way, staging tables can be created for each CSV file. 
 
 ![linkedservices](https://user-images.githubusercontent.com/46052843/216309727-e4c7044b-8df1-4d27-81ec-8a477d5f4f3d.png)
 
@@ -50,15 +50,15 @@ After the creation of the staging tables, the step of data transformation for th
 ![blobstorage](https://user-images.githubusercontent.com/46052843/216309709-1184d6cb-1a26-4278-b150-06ab112fd3f4.png)
 
 # Files and scripts
-1. In order to fill the postgres SQL database with the data you can run the python.py script. Please provide the credintials of the database inside the script. 
+1. To fill the Postgres SQL database with the data you can run the python.py script. Please provide the credentials of the database inside the script. 
 
-2. The staging scripts file contains all the SQL scripts for the creation of the staging tables.
+2. The staging_scripts file contains all the SQL scripts for the creation of the staging tables.
 
-3. The create scripts file contains all the SQL scripts for the creation of all schema tables.
+3. The create_scripts file contains all the SQL scripts for the creation of all the tables of the schema.
 
-4. The insert scripts contains all the SQL scripts for the insertion of the data from the staging tables to the schema tables. 
+4. The insert_scripts contains all the SQL scripts for the insertion of the data from the staging tables to the tables of the schema. 
 
-5. The  
+5. The business_outcome_questions.sql script can be executed for every query separately to answer the business questions 
 
 
 
