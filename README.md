@@ -36,7 +36,12 @@ The data from the original schema was transformed into the new schema presented 
 
 Three other dimension tables were created. A dimension table related to users (users_dim) that contains information about the user such as name, birthday as well as other information about his/her subscription to the application such as whether he/she is a member or not and the start and end date of subscription. A dimension table (time_dim) stores information about each date such as day, month, quarter, year, and weekday. Last but not least, a dimension table (station_dim) contains information about each station such as name, latitude, and longitude.
 
-# For the creation of the warehouse resources from Microsoft Azure were allocated.
+# Azure warehouse
+For the creation of the warehouse resources from Microsoft Azure were allocated. More specificaly an Azure Synapse Workspace was created (along with a Azure Storage Account) and a Dedicated SQL pools inside the Synapse Workspace. Νext a postgres SQL database was created.
+
+
+
+
 
 
 
